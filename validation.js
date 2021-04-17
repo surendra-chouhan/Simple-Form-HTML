@@ -40,3 +40,14 @@ tel.addEventListener('input',function(){
         telError.textContent = "";
     }else{ telError.textContent = "Phone Number is Incorrect"; }
 });
+
+const pwd = document.querySelector('#pwd');
+const pwdError = document.querySelector('.pwd-error');
+
+pwd.addEventListener('input',function(){
+    let pwdregex = new RegExp(".{,8}");
+
+    if(pwdregex.test(pwd.value)){
+        pwdError.textContent = "";
+    }else{ pwdError.textContent = "Password should be minimum 8 characters"; }
+});
