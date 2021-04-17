@@ -29,3 +29,14 @@ email.addEventListener('input',function(){
         emailError.textContent = "";
     }else{ emailError.textContent = "Email is Incorrect"; }
 })
+
+const tel = document.querySelector('#tel');
+const telError = document.querySelector('.tel-error');
+
+tel.addEventListener('input',function(){
+    let phoneregex = new RegExp(/^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im);
+
+    if(phoneregex.test(tel.value)){
+        telError.textContent = "";
+    }else{ telError.textContent = "Phone Number is Incorrect"; }
+});
