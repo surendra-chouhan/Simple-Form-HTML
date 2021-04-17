@@ -17,4 +17,15 @@ const output = document.querySelector('.salary-output');
 output.textContent = salary.value;
 salary.addEventListener('input',function(){
     output.textContent = salary.value;
+});
+
+const email = document.querySelector('#email');
+const emailError = document.querySelector('.email-error');
+
+email.addEventListener('input',function(){
+    let emailregex = new RegExp('^[A-Za-z0-9_-]+(\\.[A-Za-z0-9_-])*@[A-Za-z0-9-]+(?:\\.[A-Za-z0-9-]+)*$');
+
+    if(emailregex.test(email.value)){
+        emailError.textContent = "";
+    }else{ emailError.textContent = "Email is Incorrect"; }
 })
